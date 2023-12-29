@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 
-const MONGODB_URL = process.env.MONGODB_URL || "mongodb://127.0.0.1:27017"
+const MONGODB_URL = process.env.MONGODB_URL || "mongodb://127.0.0.1:27017/auth_with_express"
 
 const databaseconnect = ()=>{
     mongoose.connect(MONGODB_URL).
