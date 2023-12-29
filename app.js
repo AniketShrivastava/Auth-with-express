@@ -3,10 +3,12 @@ const authRouter = require("./routes/authRoute");
 const databaseconnect = require("./config/db");
 
 
+require("dotenv").config();
+
 const app = express();
 
 databaseconnect();
-app.use(express.json())
+app.use(express.json());
 
 app.use('/api/auth',authRouter)
 
