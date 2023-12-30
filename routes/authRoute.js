@@ -1,9 +1,14 @@
 const express = require("express");
-const { signup, signin } = require("../authController/authController");
+const { signup, signin, getUser, logout } = require("../authController/authController");
+const jwtAuth = require("../middleware/jwtAuth");
 const authRouter = express.Router()
 
 authRouter.post("/signup",signup)
 authRouter.get("/signin",signin)
+authRouter.get("/user",jwtAuth,getUser)
+authRouter.get("/logout",jwtAuth,logout)
+
+
 
 
 
