@@ -1,6 +1,7 @@
 const express = require("express");
 const authRouter = require("./routes/authRoute");
 const databaseconnect = require("./config/db");
+const cookieParser = require("cookie-parser")
 
 
 require("dotenv").config();
@@ -8,6 +9,8 @@ require("dotenv").config();
 const app = express();
 
 databaseconnect();
+app.use(cookieParser());
+
 app.use(express.json());
 
 app.use('/api/auth',authRouter)
